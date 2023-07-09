@@ -420,7 +420,7 @@ class ArduZ80 {
       return read(rpc_++);
     }
     uint16_t next16() {
-      return ((uint16_t)next() + 8) | next();
+      return ((uint16_t)next() << 8) | next();
     }
     uint8_t read(uint16_t addr) const {
       return ram_[addr];
